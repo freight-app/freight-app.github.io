@@ -145,6 +145,7 @@ h1 {
   background: var(--panel-2);
   box-shadow: 0 24px 70px rgba(0,0,0,.38);
   overflow: hidden;
+  min-width: 0;
 }
 
 .terminal-bar {
@@ -178,9 +179,28 @@ pre {
   overflow: auto;
 }
 
-code {
-  color: #c9d1d9;
-  font: 14px/1.7 ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+.asciinema-host {
+  background: #0b0f14;
+  min-height: 330px;
+  overflow: hidden;
+}
+
+.asciinema-host .ap-wrapper,
+.asciinema-host .ap-player {
+  background: transparent;
+}
+
+.asciinema-host .ap-terminal {
+  padding: 18px;
+}
+
+.asciinema-host .ap-player {
+  border: 0;
+  box-shadow: none;
+}
+
+.asciinema-host .ap-player .ap-control-bar {
+  display: none;
 }
 
 .links {

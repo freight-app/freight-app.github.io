@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Freight</title>
   <meta name="description" content="Freight is a package and build ecosystem for native libraries.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.10.0/dist/bundle/asciinema-player.css">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -38,13 +39,7 @@
         <div class="terminal-bar">
           <span></span><span></span><span></span>
         </div>
-        <pre><code>$ freight add zlib
-$ freight fetch
-$ freight build --release
-
-resolved 1 package
-cached sources in .pkgs/
-built target/release/app</code></pre>
+        <div id="freight-demo" class="asciinema-host"></div>
       </div>
     </section>
 
@@ -71,5 +66,19 @@ built target/release/app</code></pre>
     <span>Freight</span>
     <a href="https://github.com/freight-app">github.com/freight-app</a>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.10.0/dist/bundle/asciinema-player.min.js"></script>
+  <script>
+    AsciinemaPlayer.create('/casts/freight-quickstart.cast', document.getElementById('freight-demo'), {
+      autoPlay: true,
+      loop: true,
+      fit: false,
+      rows: 14,
+      cols: 58,
+      terminalFontSize: '14px',
+      controls: false,
+      theme: 'asciinema',
+      poster: 'npt:0:00'
+    });
+  </script>
 </body>
 </html>
