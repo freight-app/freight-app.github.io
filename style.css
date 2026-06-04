@@ -179,28 +179,11 @@ pre {
   overflow: auto;
 }
 
-.asciinema-host {
+.terminal-demo {
+  display: block;
+  width: 100%;
+  height: auto;
   background: #0b0f14;
-  min-height: 330px;
-  overflow: hidden;
-}
-
-.asciinema-host .ap-wrapper,
-.asciinema-host .ap-player {
-  background: transparent;
-}
-
-.asciinema-host .ap-terminal {
-  padding: 18px;
-}
-
-.asciinema-host .ap-player {
-  border: 0;
-  box-shadow: none;
-}
-
-.asciinema-host .ap-player .ap-control-bar {
-  display: none;
 }
 
 .links {
