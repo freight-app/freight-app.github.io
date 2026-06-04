@@ -17,13 +17,10 @@ Show
 Sleep 300ms
 Type "freight new hello --lang c++"
 Enter
-Sleep 700ms
+Sleep 1600ms
 Type "cd hello"
 Enter
 Sleep 320ms
-Type "freight check"
-Enter
-Sleep 600ms
-Type "freight run"
+Type "freight build"
 Enter
 Sleep 1800ms
