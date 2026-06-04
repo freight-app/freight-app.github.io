@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freight</title>
+  <meta name="description" content="Freight is a package and build ecosystem for native libraries.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="topbar" aria-label="Primary">
+    <a class="brand" href="/">
+      <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Freight
+    </a>
+    <div class="nav-links">
+      <a href="https://freight-app.github.io/freight-docs/">Docs</a>
+      <a href="https://freight-app.github.io/freight-docs/install/">Install</a>
+      <a href="https://github.com/freight-app">GitHub</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Native package management</p>
+        <h1>Freight</h1>
+        <p class="lede">A package registry, build tool, documentation browser, and editor workflow for C, C++, Fortran, and other native projects.</p>
+        <div class="actions">
+          <a class="button primary" href="https://freight-app.github.io/freight-docs/install/">Install</a>
+          <a class="button" href="https://freight-app.github.io/freight-docs/">Read the guide</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Freight command example">
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <pre><code>$ freight add zlib
+$ freight fetch
+$ freight build --release
+
+resolved 1 package
+cached sources in .pkgs/
+built target/release/app</code></pre>
+      </div>
+    </section>
+
+    <section class="links" aria-label="Freight resources">
+      <a href="https://freight-app.github.io/freight-docs/">
+        <span>Guide</span>
+        <strong>Learn the ecosystem</strong>
+        <p>How manifests, configuration, LSP, DAP, and DAG workflows fit together.</p>
+      </a>
+      <a href="https://freight-app.github.io/freight-docs/install/">
+        <span>Install</span>
+        <strong>Set up Freight</strong>
+        <p>Install instructions for common development environments.</p>
+      </a>
+      <a href="https://github.com/freight-app/freight-registry">
+        <span>Registry</span>
+        <strong>Host packages</strong>
+        <p>Run a public or private Freight registry with optional S3, SMTP, OAuth, and CI verification.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <span>Freight</span>
+    <a href="https://github.com/freight-app">github.com/freight-app</a>
+  </footer>
+</body>
+</html>
