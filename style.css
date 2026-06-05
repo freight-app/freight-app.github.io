@@ -102,6 +102,20 @@ h1 {
   letter-spacing: 0;
 }
 
+h2 {
+  margin: 0;
+  max-width: 720px;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
 .lede {
   margin: 24px 0 0;
   max-width: 650px;
@@ -179,6 +193,20 @@ pre {
   overflow: auto;
 }
 
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+p code,
+h2 code {
+  color: #dbe8f5;
+  background: rgba(88,166,255,.1);
+  border: 1px solid rgba(88,166,255,.18);
+  border-radius: 4px;
+  padding: .06em .28em;
+  font-size: .92em;
+}
+
 .terminal-demo {
   display: block;
   width: 100%;
@@ -224,6 +252,154 @@ pre {
   margin: 10px 0 0;
 }
 
+.section {
+  padding: 82px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-lede {
+  margin: 18px 0 0;
+  max-width: 720px;
+  color: #b7c0ca;
+  font-size: 18px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.feature-grid article,
+.command-grid article,
+.workflow-list > div {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(22,27,34,.68);
+}
+
+.feature-grid article {
+  min-height: 172px;
+  padding: 20px;
+}
+
+.feature-grid span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 780;
+}
+
+.feature-grid h3,
+.command-grid h3 {
+  margin-top: 12px;
+}
+
+.feature-grid p,
+.workflow-list span {
+  color: var(--muted);
+}
+
+.feature-grid p {
+  margin: 10px 0 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.split.reverse {
+  grid-template-columns: minmax(360px, 1fr) minmax(0, .95fr);
+}
+
+.split.reverse > div:first-child {
+  order: 2;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 26px;
+  color: var(--accent);
+  font-weight: 680;
+}
+
+.text-link:hover {
+  color: var(--text);
+}
+
+.code-panel,
+.command-grid pre {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #070b10;
+  color: #dbe8f5;
+  font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  box-shadow: 0 18px 54px rgba(0,0,0,.24);
+}
+
+.workflow .section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.command-grid article {
+  overflow: hidden;
+}
+
+.command-grid h3 {
+  padding: 18px 18px 0;
+}
+
+.command-grid pre {
+  margin-top: 12px;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.workflow-list {
+  display: grid;
+  gap: 12px;
+}
+
+.workflow-list > div {
+  padding: 18px 20px;
+}
+
+.workflow-list strong,
+.workflow-list span {
+  display: block;
+}
+
+.workflow-list span {
+  margin-top: 4px;
+}
+
 footer {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
@@ -251,6 +427,17 @@ footer {
     margin-top: 0;
     grid-template-columns: 1fr;
   }
+
+  .intro-grid,
+  .split,
+  .split.reverse,
+  .command-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split.reverse > div:first-child {
+    order: 0;
+  }
 }
 
 @media (max-width: 560px) {
@@ -277,6 +464,18 @@ footer {
   .hero {
     padding-top: 34px;
     gap: 28px;
+  }
+
+  .section {
+    padding: 54px 0;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  pre {
+    padding: 18px;
   }
 
   .lede {

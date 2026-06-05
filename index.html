@@ -59,6 +59,118 @@
         <p>Run a public or private Freight registry with optional S3, SMTP, OAuth, and CI verification.</p>
       </a>
     </section>
+
+    <section class="section intro-grid" aria-labelledby="why-freight">
+      <div>
+        <p class="eyebrow">Why Freight</p>
+        <h2 id="why-freight">One workflow for native packages</h2>
+        <p class="section-lede">Freight keeps source packages, dependency fetching, build metadata, documentation, and editor tooling tied to one project manifest.</p>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <span>01</span>
+          <h3>Project-local deps</h3>
+          <p>Registry, Git, URL, system, and path dependencies resolve into a local <code>.pkgs/</code> cache.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Native build graph</h3>
+          <p>C, C++, Fortran, assembly, and mixed-language targets build through one DAG-aware pipeline.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Editor metadata</h3>
+          <p><code>freight lsp</code> generates compile commands for clangd and provides manifest diagnostics.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Release outputs</h3>
+          <p>Install to a prefix, stage with <code>DESTDIR</code>, package archives, and publish to a registry.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="manifest-example">
+      <div>
+        <p class="eyebrow">Example manifest</p>
+        <h2 id="manifest-example">Describe targets and dependencies in <code>freight.toml</code></h2>
+        <p class="section-lede">A single manifest declares package metadata, public headers, executable targets, compiler settings, features, and platform-specific dependencies.</p>
+        <a class="text-link" href="https://freight-app.github.io/freight-docs/freight-toml/">Read the manifest reference</a>
+      </div>
+      <pre class="code-panel"><code>[package]
+name = "hello"
+version = "0.1.0"
+license = "MIT"
+
+[lib]
+name = "hello"
+srcs = ["src/hello.cpp"]
+hdrs = ["include/hello/hello.h"]
+
+[[bin]]
+name = "hello"
+src = "src/main.cpp"
+
+[language.cpp]
+std = "c++20"
+
+[dependencies]
+fmt = "10"
+mathlib = { path = "../mathlib" }
+
+[os.windows.dependencies]
+winapi = "0.3"</code></pre>
+    </section>
+
+    <section class="section workflow" aria-labelledby="workflow-examples">
+      <div class="section-head">
+        <p class="eyebrow">Common workflows</p>
+        <h2 id="workflow-examples">Commands that match the project lifecycle</h2>
+      </div>
+      <div class="command-grid">
+        <article>
+          <h3>Build loop</h3>
+          <pre><code>freight check
+freight fetch
+freight build --time-passes
+freight test
+freight run -- --help</code></pre>
+        </article>
+        <article>
+          <h3>Dependencies</h3>
+          <pre><code>freight add fmt@10
+freight add mathlib --path ../mathlib
+freight fetch
+freight tree
+freight outdated</code></pre>
+        </article>
+        <article>
+          <h3>Release</h3>
+          <pre><code>freight build --release
+freight install --prefix /usr/local --destdir target/stage
+freight package --target x86_64-linux-gnu
+freight publish</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split reverse" aria-labelledby="editor-registry">
+      <div>
+        <p class="eyebrow">Editor and registry</p>
+        <h2 id="editor-registry">Use the same graph in the terminal and IDE</h2>
+        <p class="section-lede">The VS Code extension runs Freight tasks in the integrated terminal, starts <code>freight lsp</code>, and keeps clangd pointed at <code>.freight/lsp/&lt;profile&gt;/compile_commands.json</code>.</p>
+        <div class="inline-actions">
+          <a class="button" href="https://github.com/freight-app/vscode-freight">VS Code extension</a>
+          <a class="button" href="https://freight-app.github.io/freight-docs/dap-lsp/">DAP and LSP docs</a>
+        </div>
+      </div>
+      <div class="workflow-list" aria-label="Editor workflow">
+        <div><strong>Freight: Build</strong><span>visible terminal task output</span></div>
+        <div><strong>Freight: Run</strong><span>project-aware run command</span></div>
+        <div><strong>Freight: Debug</strong><span>DAP launch through Freight</span></div>
+        <div><strong>Freight: Generate compile_commands.json</strong><span>clangd-ready build metadata</span></div>
+      </div>
+    </section>
   </main>
 
   <footer>
