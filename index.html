@@ -97,29 +97,29 @@
         <p class="section-lede">A single manifest declares package metadata, public headers, executable targets, compiler settings, features, and platform-specific dependencies.</p>
         <a class="text-link" href="https://freight-app.github.io/freight-docs/freight-toml/">Read the manifest reference</a>
       </div>
-      <pre class="code-panel"><code>[package]
-name = "hello"
-version = "0.1.0"
-license = "MIT"
+      <pre class="code-panel"><code><span class="toml-section">[package]</span>
+<span class="toml-key">name</span> = <span class="toml-string">"hello"</span>
+<span class="toml-key">version</span> = <span class="toml-string">"0.1.0"</span>
+<span class="toml-key">license</span> = <span class="toml-string">"MIT"</span>
 
-[lib]
-name = "hello"
-srcs = ["src/hello.cpp"]
-hdrs = ["include/hello/hello.h"]
+<span class="toml-section">[lib]</span>
+<span class="toml-key">name</span> = <span class="toml-string">"hello"</span>
+<span class="toml-key">srcs</span> = [<span class="toml-string">"src/hello.cpp"</span>]
+<span class="toml-key">hdrs</span> = [<span class="toml-string">"include/hello/hello.h"</span>]
 
-[[bin]]
-name = "hello"
-src = "src/main.cpp"
+<span class="toml-section">[[bin]]</span>
+<span class="toml-key">name</span> = <span class="toml-string">"hello"</span>
+<span class="toml-key">src</span> = <span class="toml-string">"src/main.cpp"</span>
 
-[language.cpp]
-std = "c++20"
+<span class="toml-section">[language.cpp]</span>
+<span class="toml-key">std</span> = <span class="toml-string">"c++20"</span>
 
-[dependencies]
-fmt = "10"
-mathlib = { path = "../mathlib" }
+<span class="toml-section">[dependencies]</span>
+<span class="toml-key">fmt</span> = <span class="toml-string">"10"</span>
+<span class="toml-key">mathlib</span> = { <span class="toml-key">path</span> = <span class="toml-string">"../mathlib"</span> }
 
-[os.windows.dependencies]
-winapi = "0.3"</code></pre>
+<span class="toml-section">[os.windows.dependencies]</span>
+<span class="toml-key">winapi</span> = <span class="toml-string">"0.3"</span></code></pre>
     </section>
 
     <section class="section workflow" aria-labelledby="workflow-examples">

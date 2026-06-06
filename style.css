@@ -346,6 +346,19 @@ h2 code {
   box-shadow: 0 18px 54px rgba(0,0,0,.24);
 }
 
+.toml-section {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.toml-key {
+  color: #79c0ff;
+}
+
+.toml-string {
+  color: var(--green);
+}
+
 .workflow .section-head {
   display: flex;
   flex-direction: column;
